@@ -17,8 +17,12 @@
   ],
   "mapCoverage": true,
   "moduleNameMapper": {
-    "(.*)": "<rootDir>/src/$1"
+    "^src/(.*)": "<rootDir>/src/$1",
+    "^app/(.*)": "<rootDir>/src/app/$1",
+    "^assets/(.*)": "<rootDir>/src/assets/$1",
+    "^environments/(.*)": "<rootDir>/src/environments/$1"
   },
+  "testEnvironment": "jest-preset-angular/testEnvironment.js",
   "transformIgnorePatterns": [
     "node_modules/(?!@ngrx)"
   ]

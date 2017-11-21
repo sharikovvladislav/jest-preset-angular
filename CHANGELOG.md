@@ -1,7 +1,19 @@
 ## Changelog (master)
 
+### v4.0.0
+* Breaking: Drop Node 4 support (because of `jsdom` upgrade)
+* Feature: Custom test environment with newest version of `jsdom` ([#75](https://github.com/thymikee/jest-preset-angular/pull/75))
+* Feature: Use universal `zone.js` instead of node-specific one ([#76](https://github.com/thymikee/jest-preset-angular/pull/76))
+* Fix: `fakeAsync` not working with `zone.js` >= 0.8.11
+
+### v3.0.1
+* Breaking: Upgrade jest to 21
+* Breaking: Upgrade ts-jest to 21
+* Breaking: `moduleNameMapper` no longer maps absolute paths to `src` by default, you need to declare the mappings explicitly ([#53](https://github.com/thymikee/jest-preset-angular/pull/53))
+* Fix: issues with `moduleNameMapper` not overriding mappings ([#53](https://github.com/thymikee/jest-preset-angular/pull/53))
+
 ### v2.0.5
-* fix: Bump to ts-jest 20.0.7
+* Fix: Bump to ts-jest 20.0.7
 
 ### v2.0.2
 * Fix: Angular injection errors are now visible
