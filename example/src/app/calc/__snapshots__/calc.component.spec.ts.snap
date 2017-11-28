@@ -9,8 +9,6 @@ exports[`CalcComponent should snap 1`] = `
   
       <p
     class="a-default-class"
-    ng-reflect-klass="a-default-class"
-    ng-reflect-ng-class="[object Object]"
   >
     
         calc works!
