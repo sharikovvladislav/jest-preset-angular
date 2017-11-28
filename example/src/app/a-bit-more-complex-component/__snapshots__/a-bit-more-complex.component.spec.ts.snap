@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ABitMoreComplexComponent snapshot test 1`] = `
+<app-a-bit-more-complex
+  anotherVar="false"
+  someVar={[Function Boolean]}
+>
+  
+      <div
+    class="kek"
+  >
+    
+        diary works!
+        
+    
+    <div
+      class="inner-class"
+    >
+      
+          
+      
+      
+          
+      <div
+      >
+        another case
+      </div>
+      
+        
+    </div>
+    
+        
+    <div
+    >
+      one more case case
+    </div>
+    
+        
+    <div
+    >
+      <app-child-component
+        kek="someVar"
+      >
+        stubbedBody
+      </app-child-component>
+    </div>
+    
+      
+  </div>
+    
+</app-a-bit-more-complex>
+`;
