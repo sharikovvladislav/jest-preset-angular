@@ -17,31 +17,23 @@ const MySerializer = {
     const theResult = AngularSnapshotSerializer.print.call(this, ...rest);
 
     const transformedResult = theResult.split('\n')
-        .map(val => {
-          if (val.includes('_ngcontent')) {
-            return val.replace(/_ngcontent-.*?$/, '').trim();
-          } else {
-            return val;
-          }
-        })
-        .map(val => {
-          if (val.includes('_nghost')) {
-            return val.replace(/_nghost-.*?$/, '').trim();
-          } else {
-            return val;
-          }
-        })
-        .map(val => {
-          if (val.includes('ng-reflect-')) {
-            return val.replace(/ng-reflect-.*?$/, '').trim();
-          } else {
-            return val;
-          }
-        })
+        .map(removeExtraAttribute('_ngcontent'))
+        .map(removeExtraAttribute('_nghost'))
+        .map(removeExtraAttribute('ng-reflect-'))
         .filter(val => !!val)
         .join('\n');
 
     return transformedResult;
+
+    function removeExtraAttribute (textToReplace) {
+        return val => {
+            if (val.includes(textToReplace)) {
+                return val.replace(new RegExp(`${textToReplace}.*?$`), '').trim();
+            } else {
+                return val;
+            }
+        }
+    }
   }
 };
 const HTMLCommentSerializer = require('./HTMLCommentSerializer');
