@@ -26,13 +26,54 @@ const sources = [
     '../media-box.component.scss',
     './media-box-h0.component.scss'
   ],
-})`
+})`,
+  `@Component({
+  selector: 'xc-media-box-h0',
+  templateUrl: 'media-box-h0.component.html',
+  styleUrls: [
+    '../../box.component.scss',
+    '../media-box.component.scss',
+    './media-box-h0.component.scss'
+  ],
+})`,
+  `@Component({
+  selector: 'xc-media-box-h0',
+  templateUrl: 'media-box-h0.component.html',
+  styleUrls: [
+    '../../../box.component.scss',
+    '../../box.component.scss',
+    '../media-box.component.scss',
+    './media-box-h0.component.scss'
+  ],
+})`,
+  `@Component({
+  selector    : 'xc-media-box-h0',
+  templateUrl : 'media-box-h0.component.html',
+  styleUrls   : [
+    '../../../box.component.scss',
+    '../../box.component.scss',
+    '../media-box.component.scss',
+    './media-box-h0.component.scss'
+  ],
+})`,
+  // double quote
+  `@Component({
+  selector: 'xc-media-box-h0',
+  templateUrl: "./media-box-h0.component.html",
+  styleUrls: [ '../media-box.component.scss' ],
+})`,
+  // backtick
+  `@Component({
+  selector: 'xc-media-box-h0',
+  templateUrl: \`./media-box-h0.component.html\`,
+  styleUrls: [ '../media-box.component.scss' ],
+})`,
 ];
 
 const config = {
   globals: {
     'ts-jest': {
-      tsConfigFile: 'example/src/tsconfig.spec.json'
+      tsConfigFile: './__tests__/tsconfig.spec.json'
     },
     __TRANSFORM_HTML__: true
   }
@@ -43,7 +84,7 @@ sources.forEach(source => {
     const result = process(source, '', config);
     expect(result).toMatch('styles: []');
     expect(result).toMatch(
-      "template: require('./media-box-h0.component.html')"
+      /template: require\(['"`]\.\/media-box-h0\.component\.html['"`]\)/
     );
   });
 });

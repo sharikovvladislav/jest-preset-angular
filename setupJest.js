@@ -48,5 +48,4 @@ getTestBed().initTestEnvironment(
 
 expect.addSnapshotSerializer(HTMLCommentSerializer);
 expect.addSnapshotSerializer(AngularSnapshotSerializer);
-
 expect.addSnapshotSerializer(MySerializer);
