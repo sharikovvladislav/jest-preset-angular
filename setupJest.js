@@ -36,7 +36,6 @@ const MySerializer = {
     }
   }
 };
-const HTMLCommentSerializer = require('./HTMLCommentSerializer');
 const getTestBed = require('@angular/core/testing').getTestBed;
 const BrowserDynamicTestingModule = require('@angular/platform-browser-dynamic/testing').BrowserDynamicTestingModule;
 const platformBrowserDynamicTesting = require('@angular/platform-browser-dynamic/testing').platformBrowserDynamicTesting;
@@ -46,6 +45,5 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 
-expect.addSnapshotSerializer(HTMLCommentSerializer);
 expect.addSnapshotSerializer(AngularSnapshotSerializer);
 expect.addSnapshotSerializer(MySerializer);
